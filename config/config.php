@@ -4,7 +4,7 @@
   $host = "127.0.0.1";
   $username = "root";
   $password =  "4008458";
-  $dbname = "simple_system";
+  $dbname = "online_shop";
   $port = 3306;
 
   // mysqli_connect(host, username, password, dbname, port, socket)
