@@ -12,20 +12,27 @@
     return $items;
   }
 
+  echo "global: " . isset($GLOBALS['conn']);
+
 
   $tpl = new SMTemplate();
 
   $data = array('items' => getAllItems());
 
   $route = 3;
-
-  if ($route == 1) {
-    // display a list of items
+  switch ($route) {
+  case 1:
     $tpl->render('items_list', $data);
-  } elseif ($route == 2) {
+    break;
+  case 2:
     $tpl->render('account');
-  } elseif ($route == 3) {
+    break;
+  case 3:
     $tpl->render('edit_items', $data);
+    break;
+  case 4:
+    $tpl->render('login');
+    break;
   }
 
 
