@@ -2,11 +2,15 @@
 
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>guitar System</title>
-    <link rel="stylesheet" href="/publc/css/styles.css" type="text/css" media="screen" title="no title"
-        charset="utf-8" />
+    <title>Guitar System</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script type="text/javascript"
+        src="http://localhost:8080/online-shop-php/public/js/public_js_functions.js"></script>
+    <link rel="stylesheet" href="http://localhost:8080/online-shop-php/public/css/styles.css" type="text/css"
+        media="screen" title="no title" charset="utf-8" />
 </head>
 
 <body>
@@ -23,14 +27,14 @@
     <!-- nav bar -->
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img src="public/images/guitar_logo.jpeg" width="30" height="30"
-                class="d-inline-block align-top" alt="">
+            <img src="public/images/guitar_logo.jpeg" width="30" height="30" class="d-inline-block align-top" alt="">
             Guitar Shop
         </a>
     </nav>
     <hr />
     {$__content}
     <hr />
+
 </body>
 
 </html>
