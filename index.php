@@ -1,18 +1,17 @@
   <?php
   require_once('smarty/smtemplate.php');
   require_once('config/config.php');
+  require_once('src/db_connection.php');
 
   function getAllItems()
   {
-    global $conn;
+    $conn = openConn();
     $sql = "SELECT * FROM items";
     $result = mysqli_query($conn, $sql);
-
     $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    closeConn($conn);
     return $items;
   }
-
-  echo "global: " . isset($GLOBALS['conn']);
 
 
   $tpl = new SMTemplate();
