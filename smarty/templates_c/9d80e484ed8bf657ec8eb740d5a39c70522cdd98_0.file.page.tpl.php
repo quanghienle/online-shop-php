@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-06 16:58:55
+/* Smarty version 3.1.39, created on 2021-05-07 15:39:32
   from '/Users/hienle/Sites/online-shop-php/templates/layouts/page.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6094204f8c4023_21122517',
+  'unifunc' => 'content_60955f34390c15_30026750',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9d80e484ed8bf657ec8eb740d5a39c70522cdd98' => 
     array (
       0 => '/Users/hienle/Sites/online-shop-php/templates/layouts/page.tpl',
-      1 => 1620320333,
+      1 => 1620401923,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6094204f8c4023_21122517 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60955f34390c15_30026750 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
 
 <head>
@@ -28,9 +28,6 @@ function content_6094204f8c4023_21122517 (Smarty_Internal_Template $_smarty_tpl)
     <title>Guitar System</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <?php echo '<script'; ?>
- src="https://code.jquery.com/jquery-3.2.1.min.js"><?php echo '</script'; ?>
->
 
     <?php echo '<script'; ?>
  type="text/javascript"
@@ -42,9 +39,7 @@ function content_6094204f8c4023_21122517 (Smarty_Internal_Template $_smarty_tpl)
 
 <body>
     <?php echo '<script'; ?>
- src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"><?php echo '</script'; ?>
+ src="https://code.jquery.com/jquery-3.2.1.min.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -65,8 +60,10 @@ function content_6094204f8c4023_21122517 (Smarty_Internal_Template $_smarty_tpl)
         </a>
     </nav>
     <hr />
-    <?php echo $_smarty_tpl->tpl_vars['__content']->value;?>
+    <div id="mainContent">
+        <?php echo $_smarty_tpl->tpl_vars['__content']->value;?>
 
+    </div>
     <hr />
 
 </body>

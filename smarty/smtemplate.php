@@ -22,10 +22,19 @@ class SMTemplate{
         $this->_smarty->config_dir = $smtemplate_config['config_dir'];
     }
 
-    function render($template, $data = array(), $layout = 'page') {
+    function bulkAssign($data){
         foreach ($data as $key => $value) {
             $this->_smarty->assign($key, $value);
         }
+    }
+
+    function fetchAssign($template, $data = array()){
+        $this->bulkassign($data);
+        echo $this->_smarty->fetch($template . '.tpl');
+    }
+
+    function render($template, $data = array(), $layout = 'page') {
+        $this->bulkassign($data);
         $content = $this->_smarty->fetch($template . '.tpl');
         $this->_smarty->assign('__content', $content);
         $this->_smarty->display($layout . '.tpl');

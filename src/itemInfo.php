@@ -3,9 +3,9 @@
 include('db_connection.php');
 
 $id = $_REQUEST["id"];
-$sql = "SELECT * FROM items WHERE id=" . $id;
-$item = sql_query($sql);
+$sql = "SELECT * FROM items WHERE id={$id} LIMIT 1";
+$item = sql_query($sql)[0];
 
-print_r($item);
+echo json_encode($item);
 
 ?>

@@ -20,7 +20,8 @@ function closeConn($conn) {
 }
    
 
-function sql_query($sql) {
+function sql_query($sql)
+  {
     $conn = openConn();
     $result = mysqli_query($conn, $sql);
     $items = mysqli_fetch_all($result, MYSQLI_ASSOC);

@@ -8,7 +8,6 @@
       <h5 class="card-title">{$item['name']}</h5>
       <p class="card-text"> price: ${$item['price']} </p>
       <a href="#item{$item['id']}" class="btn btn-primary"> details</a>
-      <button onclick="hello()">hey</button>
     </div>
   </div>
 

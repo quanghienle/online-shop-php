@@ -1,40 +1,40 @@
 
-// function ajaxWrapper(method, url, queryString, successCallback, errorCallback) {
-//   if (queryString) url += "?" + queryString;
-//   $.ajax({
-//     url: url,
-//     type: method,
-//     data: null,
-//     success: function (res) {
-//       if (!successCallback) return;
-//       else successCallback(res);
-//     },
-//     failure: function (res) {
-//       if (!errorCallback) return;
-//       else errorCallback(res);
-//     },
-//   });
-// }
-
-let hello = (x) => {
-  alert('hello');
+function ajaxRequest(method, endpoint, callback, params=null, data = null) {
+  let url = "http://localhost:8080/online-shop-php" + endpoint;
+  url += !!params ? "?" +jQuery.param(params) : ''; 
+  $.ajax({
+    url: url,
+    data: data,
+    type: method,
+    success: callback,
+  });
 }
 
-function editItem(event) {
-  const itemInfo = Array.from(event.getElementsByTagName("td")).map(x => x.innerHTML);
-  const [id, name, price, description, brand, category, image, count] = itemInfo;
-  // console.log($('#modal-item-id'))
-  // $('#exampleModalCenter').modal('show');
-  
-  const base_url = "http://localhost:8080/online-shop-php/src/itemInfo.php";
-  const xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      // document.getElementById("txtHint").innerHTML = this.responseText;
-      alert(this.responseText);
+function navigate(page, data) {
+  const display = (pageContent) => { 
+    $('#mainContent').html(pageContent); }
+  ajaxRequest('POST', '/index.php', display, null, {goto: page, data: data});
+}
+
+function authenticate(event) {
+  const name = $('#inputUser').val() || 'user';
+  const password = $('#inputPassword').val() || 'user';
+  const callback = (res) => { 
+    const {registered, info} = JSON.parse(res);
+    if (registered) {
+      navigate('items_table', info); 
+    } else {
+      alert('user is not registered');
     }
   };
-  xmlhttp.open("GET", base_url + `?id=${id}`, true);
-  xmlhttp.send();
+  ajaxRequest('POST', '/src/authentication.php', callback, null, {name, password});
+}
+
+
+function editItem(event) {
+  const id = event.getElementsByTagName("td")[0].innerHTML;
+  const callback = (res) => {navigate('item_info', res)};
+
+  ajaxRequest('GET', '/src/itemInfo.php', callback, {id});
 }
 
