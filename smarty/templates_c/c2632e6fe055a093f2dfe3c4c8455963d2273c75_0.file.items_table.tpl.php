@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-11 18:54:14
+/* Smarty version 3.1.39, created on 2021-05-11 19:46:15
   from '/Users/hienle/Sites/online-shop-php/templates/items_table.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_609ad2d65e3142_61520016',
+  'unifunc' => 'content_609adf078a3411_00673557',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c2632e6fe055a093f2dfe3c4c8455963d2273c75' => 
     array (
       0 => '/Users/hienle/Sites/online-shop-php/templates/items_table.tpl',
-      1 => 1620759112,
+      1 => 1620762317,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_609ad2d65e3142_61520016 (Smarty_Internal_Template $_smarty_tpl) {
+function content_609adf078a3411_00673557 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="items-table" style="padding: 10px;">
   <br />
   <div style="display: flex; flex-direction: row; justify-content: space-between;">
@@ -37,16 +37,18 @@ function content_609ad2d65e3142_61520016 (Smarty_Internal_Template $_smarty_tpl)
         <option value="category">Category</option>
         <option value="count">Count</option>
       </select>
-
+  
       <input type="text" class="form-control" id="searchInput">
-
+  
       <div class="input-group-append">
         <button class="btn btn-secondary" type="button" onclick="searchItems(this)">Search</button>
       </div>
     </div>
-
-    <button class="btn btn-primary" onclick="addItem()">Add item</button>
-
+  
+    <?php if ($_smarty_tpl->tpl_vars['admin']->value) {?>
+      <button class="btn btn-primary" onclick="addItem()">Add item</button>
+    <?php }?>
+  
   </div>
   <br />
   <table class="table table-hover btn-table table-responsive-md" id="inventory-table">
@@ -59,7 +61,9 @@ function content_609ad2d65e3142_61520016 (Smarty_Internal_Template $_smarty_tpl)
         <th scope="col">Brand</th>
         <th scope="col">Category</th>
         <th scope="col">Count</th>
-        <th scope="col"></th>
+        <?php if ($_smarty_tpl->tpl_vars['admin']->value) {?>
+          <th scope="col"></th>
+        <?php }?>
       </tr>
     </thead>
     <tbody>
@@ -84,17 +88,19 @@ $_smarty_tpl->tpl_vars['item']->do_else = false;
 </td>
         <td><?php echo $_smarty_tpl->tpl_vars['item']->value['count'];?>
 </td>
-        <td>
-          <button type="button" class="btn btn-success btn-sm" onclick="rowEdit(this)">Edit</button>
-          <button type="button" class="btn btn-danger btn-sm" onclick="rowDelete(this)">Delete</button>
-        </td>
+        <?php if ($_smarty_tpl->tpl_vars['admin']->value) {?>
+          <td>
+            <button type="button" class="btn btn-success btn-sm" onclick="rowEdit(this)">Edit</button>
+            <button type="button" class="btn btn-danger btn-sm" onclick="rowDelete(this)">Delete</button>
+          </td>
+        <?php }?>
       </tr>
       <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </tbody>
   </table>
-
+  
   <!-- Modal -->
   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
     aria-hidden="true">
@@ -115,7 +121,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
       </div>
     </div>
   </div>
-
+  
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -190,6 +196,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
       </div>
     </div>
   </div>
-</div>
+  </div>
 <?php }
 }

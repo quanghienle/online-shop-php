@@ -14,16 +14,18 @@
         <option value="category">Category</option>
         <option value="count">Count</option>
       </select>
-
+  
       <input type="text" class="form-control" id="searchInput">
-
+  
       <div class="input-group-append">
         <button class="btn btn-secondary" type="button" onclick="searchItems(this)">Search</button>
       </div>
     </div>
-
-    <button class="btn btn-primary" onclick="addItem()">Add item</button>
-
+  
+    {if $admin}
+      <button class="btn btn-primary" onclick="addItem()">Add item</button>
+    {/if}
+  
   </div>
   <br />
   <table class="table table-hover btn-table table-responsive-md" id="inventory-table">
@@ -36,7 +38,9 @@
         <th scope="col">Brand</th>
         <th scope="col">Category</th>
         <th scope="col">Count</th>
-        <th scope="col"></th>
+        {if $admin}
+          <th scope="col"></th>
+        {/if}
       </tr>
     </thead>
     <tbody>
@@ -50,15 +54,17 @@
         <td>{$item['brand']}</td>
         <td>{$item['category']}</td>
         <td>{$item['count']}</td>
-        <td>
-          <button type="button" class="btn btn-success btn-sm" onclick="rowEdit(this)">Edit</button>
-          <button type="button" class="btn btn-danger btn-sm" onclick="rowDelete(this)">Delete</button>
-        </td>
+        {if $admin}
+          <td>
+            <button type="button" class="btn btn-success btn-sm" onclick="rowEdit(this)">Edit</button>
+            <button type="button" class="btn btn-danger btn-sm" onclick="rowDelete(this)">Delete</button>
+          </td>
+        {/if}
       </tr>
       {/foreach}
     </tbody>
   </table>
-
+  
   <!-- Modal -->
   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
     aria-hidden="true">
@@ -79,7 +85,7 @@
       </div>
     </div>
   </div>
-
+  
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -154,4 +160,4 @@
       </div>
     </div>
   </div>
-</div>
+  </div>

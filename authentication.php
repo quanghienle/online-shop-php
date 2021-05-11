@@ -1,5 +1,6 @@
 <?php
 
+  session_start();
 require_once('include/db_connection.php');
 require_once('include/headers.php');
 require_once('config/config.php');
