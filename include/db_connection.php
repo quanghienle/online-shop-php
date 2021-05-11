@@ -24,6 +24,9 @@ function sql_query($sql)
   {
     $conn = openConn();
     $result = mysqli_query($conn, $sql);
+    if (!$result){
+      return array();
+    }
     $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
     closeConn($conn);
     return $items;

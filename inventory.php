@@ -6,9 +6,25 @@ require_once('include/headers.php');
 require_once('config/config.php');
 
 
+$condition = "";
+
+if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_REQUEST["searchField"]) && isset($_REQUEST["searchInput"])) {
+    $searchField = $_REQUEST["searchField"];
+    $searchInput = $_REQUEST["searchInput"];
+    if ( $searchField == "id" || $searchField == "price" || $searchField == "count") {
+      $condition = " WHERE {$searchField} = {$searchInput}";
+    } else {
+      $condition = " WHERE {$searchField} LIKE '%{$searchInput}%'";
+    }
+
+    if ($searchInput == "") {
+        $condition = "";
+    }
+}
+
 $smarty->assign('username', $_SESSION['username']);
 
-$sql = "SELECT * FROM items";
+$sql = "SELECT * FROM items" . $condition;
 $items = sql_query($sql);
 $smarty->assign('items', $items);
 $smarty->assign('route', 'items_table');

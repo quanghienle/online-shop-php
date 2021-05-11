@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-10 20:28:44
+/* Smarty version 3.1.39, created on 2021-05-11 18:31:26
   from '/Users/hienle/Sites/online-shop-php/templates/home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6099977c52f773_12174761',
+  'unifunc' => 'content_609acd7e61c785_63155776',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3416a1ff0db8fc85ed769f2cc0f658a694e9fbe' => 
     array (
       0 => '/Users/hienle/Sites/online-shop-php/templates/home.tpl',
-      1 => 1620678522,
+      1 => 1620757830,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/item_creation.tpl' => 1,
   ),
 ),false)) {
-function content_6099977c52f773_12174761 (Smarty_Internal_Template $_smarty_tpl) {
+function content_609acd7e61c785_63155776 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
 
 <head>
@@ -33,6 +33,7 @@ function content_6099977c52f773_12174761 (Smarty_Internal_Template $_smarty_tpl)
     <title>Guitar System</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
 
     <?php echo '<script'; ?>
  type="text/javascript"
