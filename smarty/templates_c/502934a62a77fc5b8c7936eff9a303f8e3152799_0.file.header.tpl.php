@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-10 15:48:48
-  from '/Users/hienle/Sites/online-shop-php/templates/layouts/page.tpl' */
+/* Smarty version 3.1.39, created on 2021-05-10 16:49:37
+  from '/Users/hienle/Sites/online-shop-php/templates/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_609955e09224c4_78461950',
+  'unifunc' => 'content_609964213a5226_63579912',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '9d80e484ed8bf657ec8eb740d5a39c70522cdd98' => 
+    '502934a62a77fc5b8c7936eff9a303f8e3152799' => 
     array (
-      0 => '/Users/hienle/Sites/online-shop-php/templates/layouts/page.tpl',
-      1 => 1620661473,
+      0 => '/Users/hienle/Sites/online-shop-php/templates/header.tpl',
+      1 => 1620665366,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_609955e09224c4_78461950 (Smarty_Internal_Template $_smarty_tpl) {
+function content_609964213a5226_63579912 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
 
 <head>
@@ -49,24 +49,5 @@ function content_609955e09224c4_78461950 (Smarty_Internal_Template $_smarty_tpl)
         crossorigin="anonymous"><?php echo '</script'; ?>
 >
 </head>
-
-<body>
-    <!-- nav bar -->
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="public/images/guitar_logo.jpeg" width="30" height="30" class="d-inline-block align-top" alt="">
-            Guitar Shop
-        </a>
-    </nav>
-    <hr />
-    <div id="mainContent">
-        <?php echo $_smarty_tpl->tpl_vars['__content']->value;?>
-
-    </div>
-    <hr />
-
-</body>
-
-</html>
 <?php }
 }

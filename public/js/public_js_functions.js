@@ -10,31 +10,18 @@ function ajaxRequest(method, endpoint, callback, params=null, data = null) {
   });
 }
 
-function navigate(page, data) {
-  const display = (pageContent) => { 
-    $('#mainContent').html(pageContent); }
-  ajaxRequest('POST', '/index.php', display, null, {goto: page, data: data});
-}
-
-function authenticate(event) {
-  const name = $('#inputUser').val() || 'user';
-  const password = $('#inputPassword').val() || 'user';
-  const callback = (res) => { 
-    const {registered, info} = JSON.parse(res);
-    if (registered) {
-      navigate('items_table', info); 
-    } else {
-      alert('user is not registered');
-    }
-  };
-  ajaxRequest('POST', '/src/authentication.php', callback, null, {name, password});
-}
-
 
 function editItem(event) {
   const id = event.getElementsByTagName("td")[0].innerHTML;
-  const callback = (res) => {navigate('item_info', res)};
+  const callback = (res) => { 
+    const {isExisted, content} = JSON.parse(res);
+    if (isExisted) {
+      $("html").html(content);
+    } else {
+      alert('item not found');
+    }
+  };
 
-  ajaxRequest('GET', '/src/itemInfo.php', callback, {id});
+  ajaxRequest('GET', '/itemInfo.php', callback, {id});
 }
 

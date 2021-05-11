@@ -28,6 +28,10 @@ class SMTemplate{
         }
     }
 
+    function getSmarty() {
+        return $this->_smarty;
+    }
+
     function fetchAssign($template, $data = array()){
         $this->bulkassign($data);
         echo $this->_smarty->fetch($template . '.tpl');

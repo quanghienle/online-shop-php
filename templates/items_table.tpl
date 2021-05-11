@@ -1,6 +1,9 @@
 <div class="items-table" style="padding: 10px;">
   <h2>List of items:</h2>
   <br />
+  <a href="http://localhost:8080/online-shop-php/newItem.php" class="btn btn-primary">Add New Item</a>
+  <br />
+  <br />
   <table class="table table-hover">
     <thead class="thead-dark">
       <tr>
