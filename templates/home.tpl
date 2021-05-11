@@ -27,7 +27,17 @@
             <img src="public/images/guitar_logo.jpeg" width="30" height="30" class="d-inline-block align-top" alt="">
             Guitar Shop
         </a>
-        {$username}
+
+        {if $username != ""}
+        <div class="dropdown">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {$username}
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="http://localhost:8080/online-shop-php/index.php">Log out</a>
+          </div>
+        </div>
+        {/if}
     </nav>
 
     {if $route == 'login'}

@@ -6,7 +6,7 @@ require_once('config/smarty_config.php');
 require_once('include/headers.php');
 
 $smarty->assign("route","login");
-$smarty->assign("username", "not logged in");
+$smarty->assign("username", "");
 $smarty->display('templates/home.tpl');
 
 ?>

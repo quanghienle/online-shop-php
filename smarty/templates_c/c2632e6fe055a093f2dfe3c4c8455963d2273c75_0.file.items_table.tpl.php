@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-11 19:46:15
+/* Smarty version 3.1.39, created on 2021-05-11 20:57:00
   from '/Users/hienle/Sites/online-shop-php/templates/items_table.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_609adf078a3411_00673557',
+  'unifunc' => 'content_609aef9cf243c4_77223374',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c2632e6fe055a093f2dfe3c4c8455963d2273c75' => 
     array (
       0 => '/Users/hienle/Sites/online-shop-php/templates/items_table.tpl',
-      1 => 1620762317,
+      1 => 1620766618,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_609adf078a3411_00673557 (Smarty_Internal_Template $_smarty_tpl) {
+function content_609aef9cf243c4_77223374 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="items-table" style="padding: 10px;">
   <br />
   <div style="display: flex; flex-direction: row; justify-content: space-between;">
   
     <h2>Inventory:</h2>
   
-    <div class="input-group mb-3" style="width: 400px;">
+    <div class="input-group mb-3" style="width: 500px;">
       <select class="form-select input-group-prepend" id="filterDropdown">
         <option value="id">ID</option>
         <option value="name" selected>Name</option>
@@ -45,14 +45,10 @@ function content_609adf078a3411_00673557 (Smarty_Internal_Template $_smarty_tpl)
       </div>
     </div>
   
-    <?php if ($_smarty_tpl->tpl_vars['admin']->value) {?>
-      <button class="btn btn-primary" onclick="addItem()">Add item</button>
-    <?php }?>
-  
   </div>
   <br />
   <table class="table table-hover btn-table table-responsive-md" id="inventory-table">
-    <thead class="thead-dark">
+    <thead class="thead-dark align-middle">
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Name</th>
@@ -62,7 +58,9 @@ function content_609adf078a3411_00673557 (Smarty_Internal_Template $_smarty_tpl)
         <th scope="col">Category</th>
         <th scope="col">Count</th>
         <?php if ($_smarty_tpl->tpl_vars['admin']->value) {?>
-          <th scope="col"></th>
+          <th scope="col">
+            <button class="btn btn-primary btn-sm" onclick="addItem()">Add new item</button>
+          </th>
         <?php }?>
       </tr>
     </thead>
@@ -90,8 +88,8 @@ $_smarty_tpl->tpl_vars['item']->do_else = false;
 </td>
         <?php if ($_smarty_tpl->tpl_vars['admin']->value) {?>
           <td>
-            <button type="button" class="btn btn-success btn-sm" onclick="rowEdit(this)">Edit</button>
-            <button type="button" class="btn btn-danger btn-sm" onclick="rowDelete(this)">Delete</button>
+            <button type="button" class="btn btn-outline-success btn-sm" onclick="rowEdit(this)">Edit</button>
+            <button type="button" class="btn btn-outline-danger btn-sm" onclick="rowDelete(this)">Delete</button>
           </td>
         <?php }?>
       </tr>

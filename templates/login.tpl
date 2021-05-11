@@ -1,4 +1,4 @@
-<div class="login" style="padding: 20px;">
+<div class="login" style="padding: 20px; text-align: center;">
   <form role="form" action="http://localhost:8080/online-shop-php/authentication.php" method="POST">
     <div class="form-group row">
       <label for="inputUser" class="col-sm-2 col-form-label">User Name</label>
@@ -14,5 +14,4 @@
     </div>
      <button type="submit" class="btn btn-primary" >Sign In</button> 
   </form>
-  {* <button class="btn btn-primary" onclick="authenticate2(this)">Sign In</button> *}
 </div>

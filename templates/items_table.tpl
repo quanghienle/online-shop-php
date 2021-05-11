@@ -4,7 +4,7 @@
   
     <h2>Inventory:</h2>
   
-    <div class="input-group mb-3" style="width: 400px;">
+    <div class="input-group mb-3" style="width: 500px;">
       <select class="form-select input-group-prepend" id="filterDropdown">
         <option value="id">ID</option>
         <option value="name" selected>Name</option>
@@ -22,14 +22,10 @@
       </div>
     </div>
   
-    {if $admin}
-      <button class="btn btn-primary" onclick="addItem()">Add item</button>
-    {/if}
-  
   </div>
   <br />
   <table class="table table-hover btn-table table-responsive-md" id="inventory-table">
-    <thead class="thead-dark">
+    <thead class="thead-dark align-middle">
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Name</th>
@@ -39,7 +35,9 @@
         <th scope="col">Category</th>
         <th scope="col">Count</th>
         {if $admin}
-          <th scope="col"></th>
+          <th scope="col">
+            <button class="btn btn-primary btn-sm" onclick="addItem()">Add new item</button>
+          </th>
         {/if}
       </tr>
     </thead>
@@ -56,8 +54,8 @@
         <td>{$item['count']}</td>
         {if $admin}
           <td>
-            <button type="button" class="btn btn-success btn-sm" onclick="rowEdit(this)">Edit</button>
-            <button type="button" class="btn btn-danger btn-sm" onclick="rowDelete(this)">Delete</button>
+            <button type="button" class="btn btn-outline-success btn-sm" onclick="rowEdit(this)">Edit</button>
+            <button type="button" class="btn btn-outline-danger btn-sm" onclick="rowDelete(this)">Delete</button>
           </td>
         {/if}
       </tr>

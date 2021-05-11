@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-11 18:31:26
+/* Smarty version 3.1.39, created on 2021-05-11 20:32:47
   from '/Users/hienle/Sites/online-shop-php/templates/home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_609acd7e61c785_63155776',
+  'unifunc' => 'content_609ae9ef5edf46_16482407',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c3416a1ff0db8fc85ed769f2cc0f658a694e9fbe' => 
     array (
       0 => '/Users/hienle/Sites/online-shop-php/templates/home.tpl',
-      1 => 1620757830,
+      1 => 1620765165,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/item_creation.tpl' => 1,
   ),
 ),false)) {
-function content_609acd7e61c785_63155776 (Smarty_Internal_Template $_smarty_tpl) {
+function content_609ae9ef5edf46_16482407 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
 
 <head>
@@ -63,8 +63,18 @@ function content_609acd7e61c785_63155776 (Smarty_Internal_Template $_smarty_tpl)
             <img src="public/images/guitar_logo.jpeg" width="30" height="30" class="d-inline-block align-top" alt="">
             Guitar Shop
         </a>
-        <?php echo $_smarty_tpl->tpl_vars['username']->value;?>
 
+        <?php if ($_smarty_tpl->tpl_vars['username']->value != '') {?>
+        <div class="dropdown">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <?php echo $_smarty_tpl->tpl_vars['username']->value;?>
+
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="http://localhost:8080/online-shop-php/index.php">Log out</a>
+          </div>
+        </div>
+        <?php }?>
     </nav>
 
     <?php if ($_smarty_tpl->tpl_vars['route']->value == 'login') {?>
